@@ -1,6 +1,30 @@
 # ElixirLambda
 
-**TODO: Add description**
+Provides lambda programming stuffs for elixir
+
+## Curry functions
+
+Defines:
+
+```
+defmodule Partial do
+  @moduledoc false
+  use Curry
+
+  defc f(a, b, c, d, e) do
+    %{a: a, b: b, c: c, d: d, e: e}
+  end
+end
+```
+
+Call:
+
+```
+f_a = Partial.f(1)
+f_a_b = f_a(2)
+
+%{a: 1, b: 2, c: 3, d: 4, e: 5} = f_a_b.(3).(4).(5)
+```
 
 ## Installation
 
